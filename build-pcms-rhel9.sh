@@ -2,11 +2,11 @@ source /lore/mersoj2/laces-software/scripts/loads-rhel9.sh
 # UPDATE TO YOUR OWN DIRECTORY
 SOURCE_DIR="${SOURCE_DIR:-/lore/mersoj2/laces-software/sources}"
 # UPDATE TO YOUR OWN DIRECTORY
-BUILD_DIR="${BUILD_DIR:-/lore/mersoj2/laces-software/build/rhel9}"
+BUILD_DIR="${BUILD_DIR:-/lore/mersoj2/laces-software/build/}"
 
 # LEAVE THESE ALONE (for now)
 DEVICE_ARCH="${DEVICE_ARCH:-ADA89}"
-DEPENDENCY_DIR="${DEPENDENCY_DIR:-/lore/mersoj2/laces-software/build/rhel9}"
+DEPENDENCY_DIR="${DEPENDENCY_DIR:-/lore/mersoj2/laces-software/build/}"
 
 
 CURDIR=$PWD
