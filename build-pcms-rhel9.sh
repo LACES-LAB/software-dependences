@@ -32,6 +32,7 @@ cmake -S $SOURCE_DIR/pcms -B $BUILD_DIR/${DEVICE_ARCH}/pcms \
   -DADIOS2_DIR=$DEPENDENCY_DIR/adios2/install/lib64/cmake/adios2/ \
   -Dperfstubs_DIR=$DEPENDENCY_DIR/perfstubs/install/lib/cmake/ \
   -DKokkos_DIR=$DEPENDENCY_DIR/${DEVICE_ARCH}/kokkos/install/lib64/cmake/Kokkos/ \
+  -DKokkosKernels_DIR=$DEPENDENCY_DIR/${DEVICE_ARCH}/kokkos-kernels/install/lib64/cmake/KokkosKernels/ \
   -DBUILD_TESTING=ON
 
 cmake --build $BUILD_DIR/${DEVICE_ARCH}/pcms/ -j8 --target install
