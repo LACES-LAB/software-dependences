@@ -6,6 +6,9 @@ cd $SOURCE_DIR
 
 export NVCC_WRAPPER_DEFAULT_COMPILER=`which mpicxx`
 git clone git@github.com:kokkos/kokkos.git
+cd kokkos
+git checkout tags/4.2.00
+cd ..
 
 ENABLE_CUDA=ON
 ENABLE_OPENMP=OFF

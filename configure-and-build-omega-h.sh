@@ -5,7 +5,8 @@ CURDIR=$PWD
 cd $SOURCE_DIR
 export NVCC_WRAPPER_DEFAULT_COMPILER=`which mpicxx`
 
-git clone -b reducedThrust git@github.com:SCOREC/omega_h.git
+#git clone -b reducedThrust git@github.com:SCOREC/omega_h.git
+git clone git@github.com:SCOREC/omega_h.git
 
 cmake -S $SOURCE_DIR/omega_h -B $BUILD_DIR/${DEVICE_ARCH}/omega_h \
   -DCMAKE_INSTALL_PREFIX=$BUILD_DIR/${DEVICE_ARCH}/omega_h/install \
