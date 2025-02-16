@@ -7,7 +7,7 @@ cd $SOURCE_DIR
 export NVCC_WRAPPER_DEFAULT_COMPILER=`which mpicxx`
 git clone git@github.com:kokkos/kokkos-kernels.git
 cd kokkos-kernels
-git checkout tags/4.2.00
+git checkout tags/4.5.00
 cd ..
 
 cmake -S $SOURCE_DIR/kokkos-kernels -B $BUILD_DIR/${DEVICE_ARCH}/kokkos-kernels \
