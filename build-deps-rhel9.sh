@@ -24,10 +24,12 @@ source $DIR/configure-and-build-flcl.sh $SOURCE_DIR $BUILD_DIR
 source $DIR/configure-and-build-adios2.sh $SOURCE_DIR $BUILD_DIR
 source $DIR/configure-and-build-redev.sh $SOURCE_DIR $BUILD_DIR 
 
-# additional dependencies for mumfim
+## additional dependencies for mumfim
 source $DIR/configure-and-build-yaml-cpp.sh $SOURCE_DIR $BUILD_DIR
 source $DIR/configure-and-build-core.sh $SOURCE_DIR $BUILD_DIR $SCRIPT_DIR
 source $DIR/configure-and-build-fmt.sh $SOURCE_DIR $BUILD_DIR
 source $DIR/configure-and-build-model-traits.sh $SOURCE_DIR $BUILD_DIR
+source $DIR/configure-and-build-petsc.sh $SOURCE_DIR $BUILD_DIR
+source $DIR/configure-and-build-las.sh $SOURCE_DIR $BUILD_DIR
 
 cd $DIR

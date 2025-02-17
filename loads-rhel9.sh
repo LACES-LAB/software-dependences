@@ -6,6 +6,9 @@ module load cmake/3.26.3-xxgzxlv
 
 # additional loads for mumfim
 module load simmetrix-simmodsuite/2025.0-250108dev-llxq6sk
+# note we need a specific version of pumi with a patch, so we must build ourselves (i.e., no modules)
 
-# note we need a specific version of pumi with a patch, so we must build ourselves
+#module load openblas/0.3.23-wqm7iud
+module load netlib-lapack/3.11.0-b22mgwg #netlib-lapack includes blas
+module load netlib-scalapack/2.2.0-fzd4jvl
 
