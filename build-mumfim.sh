@@ -27,7 +27,7 @@ cmake -S $SOURCE_DIR/amsi -B $BUILD_DIR/amsi \
 	-DCMAKE_C_COMPILER=mpicc \
 	-DBUILD_EXTERNAL=OFF \
 	-DSCOREC_DIR=${DEPENDENCY_DIR}/core/install/lib/cmake/SCOREC \
-	-Dyaml-cpp_DIR=${BUILD_DIR}/yaml-cpp/install/lib64/cmake/yaml-cpp \
+	-Dyaml-cpp_DIR=${DEPENDENCY_DIR}/yaml-cpp/install/lib64/cmake/yaml-cpp \
 	-DENABLE_ZOLTAN=OFF \
 	-DCMAKE_INSTALL_PREFIX=${BUILD_DIR}/amsi/install
 
@@ -48,7 +48,7 @@ cmake -S $SOURCE_DIR/mumfim -B $BUILD_DIR/mumfim \
         -DCatch2_DIR=${DEPENDENCY_DIR}/Catch2/install/lib64/cmake/Catch2 \
 	-Dlas_DIR=${DEPENDENCY_DIR}/las/install/lib/cmake/las/ \
 	-DModelTraits_DIR=${DEPENDENCY_DIR}/model-traits/install/lib64/cmake/ModelTraits/ \
-	-Dfmt_DIR=${BUILD_DIR}/fmt/install/lib64/cmake/fmt \
+	-Dfmt_DIR=${DEPENDENCY_DIR}/fmt/install/lib64/cmake/fmt \
 	-DKokkos_DIR=$DEPENDENCY_DIR/${DEVICE_ARCH}/kokkos/install/lib64/cmake/Kokkos/ \
 	-DKokkosKernels_DIR=$DEPENDENCY_DIR/${DEVICE_ARCH}/kokkos-kernels/install/lib64/cmake/KokkosKernels/
 
