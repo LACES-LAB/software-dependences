@@ -32,4 +32,8 @@ source $DIR/configure-and-build-model-traits.sh $SOURCE_DIR $BUILD_DIR
 source $DIR/configure-and-build-petsc.sh $SOURCE_DIR $BUILD_DIR
 source $DIR/configure-and-build-las.sh $SOURCE_DIR $BUILD_DIR
 
+# additional dependencies for pumi-pic
+source $DIR/configure-and-build-engpar.sh $SOURCE_DIR $BUILD_DIR
+source $DIR/configure-and-build-cabana.sh $SOURCE_DIR $BUILD_DIR
+
 cd $DIR
