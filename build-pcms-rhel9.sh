@@ -24,6 +24,7 @@ cmake -S $SOURCE_DIR/pcms -B $BUILD_DIR/${DEVICE_ARCH}/pcms \
   -DCMAKE_Fortran_COMPILER=`which mpifort`\
   -DCMAKE_BUILD_TYPE=Release \
   -DCatch2_DIR=$DEPENDENCY_DIR/Catch2/install/lib64/cmake/Catch2/ \
+  -DmeshFields_DIR=$DEPENDENCY_DIR/${DEVICE_ARCH}/meshFields/install/lib64/cmake/meshfields \
   -DOmega_h_DIR=$DEPENDENCY_DIR/${DEVICE_ARCH}/omega_h/install/lib64/cmake/Omega_h/ \
   -Dredev_DIR=$DEPENDENCY_DIR/${DEVICE_ARCH}/redev/install/lib64/cmake/redev/ \
   -Dflcl_DIR=$DEPENDENCY_DIR/flcl/install/lib64/cmake/flcl/ \
