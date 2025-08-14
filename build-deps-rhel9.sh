@@ -22,7 +22,8 @@ source $DIR/configure-and-build-omega-h.sh $SOURCE_DIR $BUILD_DIR
 source $DIR/configure-and-build-perfstubs.sh $SOURCE_DIR $BUILD_DIR
 source $DIR/configure-and-build-flcl.sh $SOURCE_DIR $BUILD_DIR
 source $DIR/configure-and-build-adios2.sh $SOURCE_DIR $BUILD_DIR
-source $DIR/configure-and-build-redev.sh $SOURCE_DIR $BUILD_DIR 
+source $DIR/configure-and-build-redev.sh $SOURCE_DIR $BUILD_DIR
+source $DIR/configure-and-build-meshFields.sh $SOURCE_DIR $BUILD_DIR
 
 ## additional dependencies for mumfim
 source $DIR/configure-and-build-yaml-cpp.sh $SOURCE_DIR $BUILD_DIR
