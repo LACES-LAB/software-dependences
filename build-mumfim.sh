@@ -1,15 +1,15 @@
 # this script will configure and build amsi and mumfim
 # we don't treat amsi as a separate dependency since they are tightly coupled
 
-source /lore/mersoj2/laces-software/scripts/loads-rhel9.sh
+source /users/mersoj2/laces-software/scripts/loads-rhel9.sh
 # UPDATE TO YOUR OWN DIRECTORY
-SOURCE_DIR="${SOURCE_DIR:-/lore/mersoj2/laces-software/sources}"
+SOURCE_DIR="${SOURCE_DIR:-/users/mersoj2/laces-software/sources}"
 # UPDATE TO YOUR OWN DIRECTORY
-BUILD_DIR="${BUILD_DIR:-/lore/mersoj2/laces-software/build/}"
+BUILD_DIR="${BUILD_DIR:-/users/mersoj2/laces-software/build/}"
 
 # LEAVE THESE ALONE (for now)
 DEVICE_ARCH="${DEVICE_ARCH:-ADA89}"
-DEPENDENCY_DIR="${DEPENDENCY_DIR:-/lore/mersoj2/laces-software/build/}"
+DEPENDENCY_DIR="${DEPENDENCY_DIR:-/users/mersoj2/laces-software/build/}"
 
 
 export NVCC_WRAPPER_DEFAULT_COMPILER=`which mpicxx`

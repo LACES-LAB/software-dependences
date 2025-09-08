@@ -4,8 +4,8 @@ source $DIR/loads-rhel9.sh
 
 
 
-SOURCE_DIR="${SOURCE_DIR:-/lore/mersoj2/laces-software/sources}"
-BUILD_DIR="${BUILD_DIR:-/lore/mersoj2/laces-software/build/}"
+SOURCE_DIR="${SOURCE_DIR:-/users/mersoj2/laces-software/sources}"
+BUILD_DIR="${BUILD_DIR:-/users/mersoj2/laces-software/build/}"
 DEVICE_ARCH="${DEVICE_ARCH:-ADA89}"
 
 SCRIPT_DIR=$(realpath $(dirname "$0"))

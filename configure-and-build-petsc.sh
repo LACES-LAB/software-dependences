@@ -17,7 +17,7 @@ git checkout main
 
 	#--with-blas-lib=$NETLIB_LAPACK_RHEL9_ROOT/lib64/libblas.so \
         #--with-lapack-dir=$NETLIB_LAPACK_RHEL9_ROOT/lib64/ \
-make PETSC_DIR=/lore/mersoj2/laces-software/sources/petsc PETSC_ARCH=arch-linux-c-debug all
-make PETSC_DIR=/lore/mersoj2/laces-software/sources/petsc PETSC_ARCH=arch-linux-c-debug install
+make PETSC_DIR=/users/mersoj2/laces-software/sources/petsc PETSC_ARCH=arch-linux-c-debug all
+make PETSC_DIR=/users/mersoj2/laces-software/sources/petsc PETSC_ARCH=arch-linux-c-debug install
 
 cd $CURDIR
