@@ -13,6 +13,11 @@ CURDIR=$PWD
 cd $SOURCE_DIR
 
 git clone https://github.com/SCOREC/pumi-pic.git
+cd pumi-pic
+git submodule init
+git submodule sync
+git submodule update
+cd ..
 
 export NVCC_WRAPPER_DEFAULT_COMPILER=`which mpicxx`
 
