@@ -3,21 +3,27 @@ BUILD_DIR=$2
 
 CURDIR=$PWD
 cd $SOURCE_DIR
-git clone https://github.com/petsc/petsc
+git clone -b v3.24.2 https://github.com/petsc/petsc
+
+ENABLE_CUDA=1
+if [ "${DEVICE_ARCH}" = "NATIVE" ]; then
+  echo "BUILDING PETSC WITH NATIVE CPU ARCH"
+  ENABLE_CUDA=0
+fi
 
 cd petsc
-git checkout main
-
 ./configure --with-cc=mpicc --with-cxx=mpicxx --with-fc=mpifort \
-	--prefix=$BUILD_DIR/petsc/ \
+	--prefix=$BUILD_DIR/${DEVICE_ARCH}/petsc/install \
+	--PETSC_ARCH=arch-linux-c-debug-${DEVICE_ARCH} \
 	--with-blaslapack-dir=$NETLIB_LAPACK_RHEL9_ROOT \
-	--with-scalapack-dir=$NETLIB_SCALAPACK_RHEL9_ROOT
+	--with-scalapack-dir=$NETLIB_SCALAPACK_RHEL9_ROOT \
+	--with-kokkos-dir=$BUILD_DIR/${DEVICE_ARCH}/kokkos/install/ \
+	--with-kokkos-kernels-dir=$BUILD_DIR/${DEVICE_ARCH}/kokkos-kernels/install \
+	--with-cuda=${ENABLE_CUDA} \
+	--with-shared-libs=1
 
-
-
-	#--with-blas-lib=$NETLIB_LAPACK_RHEL9_ROOT/lib64/libblas.so \
-        #--with-lapack-dir=$NETLIB_LAPACK_RHEL9_ROOT/lib64/ \
-make PETSC_DIR=/users/mersoj2/laces-software/sources/petsc PETSC_ARCH=arch-linux-c-debug all
-make PETSC_DIR=/users/mersoj2/laces-software/sources/petsc PETSC_ARCH=arch-linux-c-debug install
+make PETSC_DIR=${SOURCE_DIR}/petsc PETSC_ARCH=arch-linux-c-debug-${DEVICE_ARCH} all
+make PETSC_DIR=${SOURCE_DIR}/petsc PETSC_ARCH=arch-linux-c-debug-${DEVICE_ARCH} install
+make PETSC_DIR=$BUILD_DIR/${DEVICE_ARCH}/petsc/install PETSC_ARCH="" check
 
 cd $CURDIR

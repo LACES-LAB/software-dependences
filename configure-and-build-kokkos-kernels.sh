@@ -5,10 +5,7 @@ CURDIR=$PWD
 cd $SOURCE_DIR
 
 export NVCC_WRAPPER_DEFAULT_COMPILER=`which mpicxx`
-git clone git@github.com:kokkos/kokkos-kernels.git
-cd kokkos-kernels
-git checkout tags/4.5.01
-cd ..
+git clone -b 4.6.01 git@github.com:kokkos/kokkos-kernels.git
 
 cmake -S $SOURCE_DIR/kokkos-kernels -B $BUILD_DIR/${DEVICE_ARCH}/kokkos-kernels \
   -DCMAKE_INSTALL_PREFIX=$BUILD_DIR/${DEVICE_ARCH}/kokkos-kernels/install \

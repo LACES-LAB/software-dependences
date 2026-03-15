@@ -5,10 +5,7 @@ CURDIR=$PWD
 cd $SOURCE_DIR
 
 export NVCC_WRAPPER_DEFAULT_COMPILER=`which mpicxx`
-git clone git@github.com:kokkos/kokkos.git
-cd kokkos
-git checkout tags/4.5.01
-cd ..
+git clone -b 4.6.01 git@github.com:kokkos/kokkos.git
 
 ENABLE_CUDA=ON
 ENABLE_OPENMP=OFF
