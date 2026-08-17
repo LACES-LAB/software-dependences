@@ -35,9 +35,12 @@ cmake -S $SOURCE_DIR/pcms -B $BUILD_DIR/${DEVICE_ARCH}/pcms \
   -DKokkos_DIR=$DEPENDENCY_DIR/${DEVICE_ARCH}/kokkos/install/lib64/cmake/Kokkos/ \
   -DKokkosKernels_DIR=$DEPENDENCY_DIR/${DEVICE_ARCH}/kokkos-kernels/install/lib64/cmake/KokkosKernels/ \
   -DBUILD_TESTING=ON \
+  -DPCMS_ENABLE_PETSC=ON \
   -DPETSC_ARCH="" \
   -DPETSC_DIR=$BUILD_DIR/${DEVICE_ARCH}/petsc/install \
-  -DPCMS_ENABLE_SPDLOG=OFF
+  -DPCMS_ENABLE_SPDLOG=OFF \
+  -DPCMS_ENABLE_PYTHON=ON \
+  -Dpybind11_ROOT=$BUILD_DIR/pybind11/install
 
 cmake --build $BUILD_DIR/${DEVICE_ARCH}/pcms/ -j8 --target install
 cd $CURDIR

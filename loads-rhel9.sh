@@ -14,4 +14,11 @@ module load simmetrix-simmodsuite/2025.0-250108dev-llxq6sk
 module load netlib-lapack/3.11.0-b22mgwg #netlib-lapack includes blas
 module load netlib-scalapack/2.2.0-fzd4jvl
 
+# python
+module load python/3.10.10-fy3aixq
+# we do not use pybind11 module because this conflicts with nvcc
+# see: https://github.com/pybind/pybind11/pull/4893
+# therefore, we build a newer version of py-pybind11
+#module load py-pybind11/2.10.1-gnflqne
+
 export NVCC_WRAPPER_DEFAULT_COMPILER=`which mpicxx`

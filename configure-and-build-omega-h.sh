@@ -8,8 +8,7 @@ export NVCC_WRAPPER_DEFAULT_COMPILER=`which mpicxx`
 #git clone -b reducedThrust git@github.com:SCOREC/omega_h.git
 git clone git@github.com:SCOREC/omega_h.git
 cd omega_h
-#https://github.com/SCOREC/pcms/blob/462d4bd7cc4ce72fd17226296283b6af8f3084a7/.github/workflows/cmake-test.yml#L96
-git checkout 1765836a00b9a64b8b3791f1442ac52f147e43b2
+git checkout d5489aac892895ad352ad9ce3926c5c98a4be791
 cd ..
 
 cmake -S $SOURCE_DIR/omega_h -B $BUILD_DIR/${DEVICE_ARCH}/omega_h \
@@ -23,7 +22,9 @@ cmake -S $SOURCE_DIR/omega_h -B $BUILD_DIR/${DEVICE_ARCH}/omega_h \
   -DBUILD_SHARED_LIBS=OFF \
   -DKokkos_DIR=$BUILD_DIR/${DEVICE_ARCH}/kokkos/install/lib64/cmake/Kokkos/ \
   -DCMAKE_VERBOSE_MAKEFILE=ON \
-  -DBUILD_SHARED_LIBS=ON
+  -DBUILD_SHARED_LIBS=ON \
+  -DOmega_h_USE_pybind11=on \
+  -Dpybind11_ROOT=$BUILD_DIR/pybind11/install
 
 cmake --build $BUILD_DIR/${DEVICE_ARCH}/omega_h/ -j8 --target install
 cd $CURDIR
